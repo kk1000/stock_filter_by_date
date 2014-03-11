@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="view_move_search_filter_by_date" model="ir.ui.view">
+            <field name="name">stock.move.search</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_search"/>
+            <field name="arch" type="xml">
+                <field name="date" position="replace">
+                    <field name="filter_by_date"/>
+                    <field name="filter_by_date_expected"/>
+                </field>
+            </field>
+        </record>
+        <record id="view_picking_internal_search_filter_by_date" model="ir.ui.view">
+            <field name="name">stock.picking.internal.search</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <field name="stock_journal_id" position="after">
+                    <field name="filter_by_min_date"/>
+                    <field name="filter_by_create_date"/>
+                </field>
+            </field>
+        </record>
+        <record id="view_picking_in_search_filter_by_date" model="ir.ui.view">
+            <field name="name">stock.picking.in.search</field>
+            <field name="model">stock.picking.in</field>
+            <field name="inherit_id" ref="stock.view_picking_in_search"/>
+            <field name="arch" type="xml">
+                <field name="stock_journal_id" position="after">
+                    <field name="filter_by_min_date"/>
+                    <field name="filter_by_create_date"/>
+                </field>
+            </field>
+        </record>
+        <record id="view_picking_out_search_filter_by_date" model="ir.ui.view">
+            <field name="name">stock.picking.out.search</field>
+            <field name="model">stock.picking.out</field>
+            <field name="inherit_id" ref="stock.view_picking_out_search"/>
+            <field name="arch" type="xml">
+                <field name="stock_journal_id" position="after">
+                    <field name="filter_by_min_date"/>
+                    <field name="filter_by_create_date"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
